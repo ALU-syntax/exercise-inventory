@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tugasspringboot.tugas1.interfaces;
+package com.tugasspringboot.tugas1.repositories;
 
 import com.tugasspringboot.tugas1.models.Inven;
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author macbook
  */
-public interface InvenInterface {
-    List<Inven> getAll();
-    void store(Inven inven);
-    Inven getById(long id);
-    void delete(long id);   
+@Repository
+public interface InvenRepository extends JpaRepository<Inven, Long>{
+    
 }

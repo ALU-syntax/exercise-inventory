@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="includes/base :: css"></head>
+<!-- body -->
+
+<body class="main-layout">
+    <!-- loader  -->
+    <div th:replace="includes/base :: loader"></div>
+    <!-- end loader -->
+    
+    <!-- header -->
+    <header th:replace="includes/base :: navbar"></header>
+    <!-- end header -->
+    <div class="container mt-5">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h5 class="mb-4">Halaman Tambah Stock Sayur</h5>
+
+                          <form method="POST" action="#" th:action="@{/store}" th:object="${inven}">
+                            <div class="form-group">
+                                <label for="example-todo-title">Masukan Nama Sayur</label>
+                                <input th:field="*{name}" type="text" class="form-control" id="example-todo-title" aria-describedby="emailHelp" placeholder="Masukan Nama Sayur" required>
+                                <small id="emailHelp" class="form-text text-muted">Tuliskan Nama Sayur dengan benar</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="example-todo-desc">Jelaskan deskripsi Sayur</label>
+                                <textarea th:field="*{description}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Masukan Deskripsi sayur"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Kamu dapat menuliskan deskripsi sayur seDetail Mungkin pada kolom ini</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-todo-desc">Tuliskan Stock Sayur</label>
+                                <textarea th:field="*{stock}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Nambah Berapa Stocknya?"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Tuliskan Jumlah Seluruh Sayur, Jangan Ada yang Dibawa Ke RUMAH!</small>
+                            </div>  
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        </div>
+                </div>
+            </div>
+
+  <div th:replace="includes/base :: script"></div>
+  
+</html>
